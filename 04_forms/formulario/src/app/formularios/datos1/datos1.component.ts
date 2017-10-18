@@ -1,5 +1,5 @@
 import { Libro, Pais } from '../libro.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -12,6 +12,7 @@ export class Datos1Component implements OnInit {
   oLibro: Libro;
   aPaises: Array<Pais>;
   estaEnviado: boolean;
+  @ViewChild('myForm')  form: any;
 
   constructor() { }
 
@@ -24,6 +25,8 @@ export class Datos1Component implements OnInit {
       {codigo: 'FR', nombre: 'Francia'},
       {codigo: 'IT', nombre: 'Italia'}
     ];
+
+    console.log(this.form);
 
   }
 
