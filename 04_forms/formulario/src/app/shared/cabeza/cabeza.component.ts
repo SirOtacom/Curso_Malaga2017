@@ -4,7 +4,7 @@ import { Component, OnInit, style } from '@angular/core';
     selector: 'app-cabeza',
     template: `
         <header>
-	        <h1>Bienvenidos al curso {{curso}}!</h1>
+	        <h1> {{titulo}}</h1>
         </header>
      `,
      styles: [`
@@ -17,10 +17,10 @@ import { Component, OnInit, style } from '@angular/core';
 
 export class CabezaComponent implements OnInit {
 
-    curso: string;
+    titulo: string;
     constructor() { }
 
    ngOnInit() {
-    this.curso = 'Angular 4.x';
+    this.titulo = 'Formularios';
    }
 }

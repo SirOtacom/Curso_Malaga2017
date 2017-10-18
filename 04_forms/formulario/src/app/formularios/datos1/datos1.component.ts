@@ -1,4 +1,6 @@
+import { Libro, Pais } from '../libro.model';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-datos1',
@@ -7,18 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Datos1Component implements OnInit {
 
-  sIdea: string;
-  aIdeas: Array<string>;
+  oLibro: Libro;
+  aPaises: Array<Pais>;
 
   constructor() { }
 
   ngOnInit() {
-    this.sIdea = '';
-    this.aIdeas = [];
+
+    this.oLibro = {
+      autor: '',
+      titulo: '',
+      editorial: '',
+      numpag: 0,
+      exlibris: false,
+      genero: '',
+      pais: {codigo: '', nombre: ''}
+    };
+
+    this.aPaises = [
+      {codigo: 'ES', nombre: 'España'},
+      {codigo: 'FR', nombre: 'Francia'},
+      {codigo: 'IT', nombre: 'Italia'}
+    ];
+
   }
 
   btnInsert() {
-    this.aIdeas.push(this.sIdea);
-    this.sIdea = '';
+
   }
 }

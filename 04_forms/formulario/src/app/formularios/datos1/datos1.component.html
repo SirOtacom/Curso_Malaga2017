@@ -1,19 +1,45 @@
-<div class="container">
-  <p>
-    <label for="idea">Dime una idea</label>
-    <input type="text" id="idea" name="idea" [(ngModel)]="sIdea">
-  </p>
-  
-  <button (click)="btnInsert()">Añadir</button>
+<form class="container">
+  <div>
+    <p>
+      <label for="autor">Autor</label>
+      <input type="text" id="autor" name="autor" [(ngModel)]="oLibro.autor">
+    </p>
+    <p>
+      <label for="titulo">Titulo</label>
+      <input type="text" id="titulo" name="titulo" [(ngModel)]="oLibro.titulo">
+    </p>
+    <p>
+      <label for="editorial">Editorial</label>
+      <input type="text" id="editorial" name="editorial" [(ngModel)]="oLibro.editorial">
+    </p>
+    <p>
+      <label for="numpag">Num Pag</label>
+      <input type="text" id="numpag" name="numpag" [(ngModel)]="oLibro.numpag">
+    </p>
+    <p>
+      <label for="exlibris">Disponible?</label>
+      <input type="checkbox" id="exlibris" name="exlibris" [(ngModel)]="oLibro.exlibris">
+    </p>    
+    <p>Selecciona un género</p>
+    <p>
+      <input type="radio" id="fantastico" name="genero" value="fantastico" [(ngModel)]="oLibro.genero">
+      <label for="fantastico">Fantastico</label>
+      <input type="radio" id="policiaco" name="genero" value="policiaco" [(ngModel)]="oLibro.genero">
+      <label for="policiaco">Policiaco</label>
+      <input type="radio" id="otros" name="genero" value="otros" [(ngModel)]="oLibro.genero">
+      <label for="otros">Otros</label>
+    </p>
+    <p>
+      <label for="pais">Pais</label>
+      <select id="pais" nombre="pais" [(ngModel)]="oLibro.pais">
+        <option *ngFor="let pais of aPaises" [ngValue]="pais">{{pais.nombre}}</option>
+      </select>
+    </p>
 
-  <div *ngIf="aIdeas.length > 0">
-      <h2>Lista de ideas:</h2>
-      
-      <ul>
-        <li *ngFor="let idea of aIdeas; let i = index">{{idea}} ({{i+1}})</li>
-      </ul>
+    <button (click)="btnInsert()">Añadir</button>
 
   </div>
+</form>
 
-
-</div>
+<h2>Resultado</h2>
+<p>{{oLibro | json}}</p>
