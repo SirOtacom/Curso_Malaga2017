@@ -11,10 +11,27 @@ export class Datos1Component implements OnInit {
 
   oLibro: Libro;
   aPaises: Array<Pais>;
+  estaEnviado: boolean;
 
   constructor() { }
 
   ngOnInit() {
+
+    this.btnBorrar();
+
+    this.aPaises = [
+      {codigo: 'ES', nombre: 'España'},
+      {codigo: 'FR', nombre: 'Francia'},
+      {codigo: 'IT', nombre: 'Italia'}
+    ];
+
+  }
+
+  btnInsert() {
+    this.estaEnviado = true;
+  }
+
+  btnBorrar() {
 
     this.oLibro = {
       autor: '',
@@ -26,15 +43,7 @@ export class Datos1Component implements OnInit {
       pais: {codigo: '', nombre: ''}
     };
 
-    this.aPaises = [
-      {codigo: 'ES', nombre: 'España'},
-      {codigo: 'FR', nombre: 'Francia'},
-      {codigo: 'IT', nombre: 'Italia'}
-    ];
-
+    this.estaEnviado = false;
   }
 
-  btnInsert() {
-
-  }
 }

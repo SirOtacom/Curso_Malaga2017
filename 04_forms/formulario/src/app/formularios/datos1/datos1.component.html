@@ -1,4 +1,4 @@
-<form class="container">
+<form class="container" (ngSubmit)="btnInsert()">
   <div>
     <p>
       <label for="autor">Autor</label>
@@ -29,17 +29,23 @@
       <input type="radio" id="otros" name="genero" value="otros" [(ngModel)]="oLibro.genero">
       <label for="otros">Otros</label>
     </p>
+    
+    
     <p>
       <label for="pais">Pais</label>
-      <select id="pais" nombre="pais" [(ngModel)]="oLibro.pais">
+      <select id="pais" name="pais" [(ngModel)]="oLibro.pais" >
         <option *ngFor="let pais of aPaises" [ngValue]="pais">{{pais.nombre}}</option>
       </select>
     </p>
+    
 
-    <button (click)="btnInsert()">Añadir</button>
-
+    <button type="submit">Añadir</button>
+    <button type="button" (click)="btnBorrar()">Borrar</button>
+    
   </div>
 </form>
 
-<h2>Resultado</h2>
-<p>{{oLibro | json}}</p>
+<div *ngIf="estaEnviado">
+  <h2>Resultado</h2>
+  <p>{{oLibro | json}}</p>
+</div>
