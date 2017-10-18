@@ -9,7 +9,7 @@ export class PieComponent implements OnInit {
 
   formador: string;
   empresa: string;
-  fecha: string;
+  fecha: Date;
 
   constructor() {
   }
@@ -17,7 +17,7 @@ export class PieComponent implements OnInit {
   ngOnInit() {
     this.formador = 'Alejandro Cerezo Lasne';
     this.empresa = 'Icono Training Consulting';
-    this.fecha = '2017';
+    this.fecha = new Date();
   }
 
 }
