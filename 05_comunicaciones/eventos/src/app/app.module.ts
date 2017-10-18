@@ -1,3 +1,4 @@
+import { ServiciosModule } from './servicios/servicios.module';
 import { FormulariosModule } from './formularios/formularios.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     SharedModule,
-    FormulariosModule
+    FormulariosModule,
+    ServiciosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
