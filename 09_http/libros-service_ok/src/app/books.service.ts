@@ -16,6 +16,6 @@ export class BooksService {
   }
 
   private extractTitles(response: Response) {
-    return response.json().items.map(book => book.volumeInfo.title)
+    return response.json().items.map(book => book.volumeInfo.title);
   }
 }
