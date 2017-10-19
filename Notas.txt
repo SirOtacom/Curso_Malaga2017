@@ -1,0 +1,22 @@
+
+Angular 2
+
+angularjs.org
+www.madewithangular.com
+
+
+
+git clone url
+
+
+ng new -si xxxxxxxx
+ng serve --preserve-symlinks
+
+ng g c nombreComponente
+ng g m nombreModulo
+
+npm start
+
+
+
+node nombreJavaScript
